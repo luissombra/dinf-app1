@@ -9,7 +9,8 @@ angular.module('patrimonios').controller('PatrimoniosController', ['$scope', '$s
 		$scope.create = function() {
 			// Create new Patrimonio object
 			var patrimonio = new Patrimonios ({
-				name: this.name
+				name: this.name,
+                tombo: this.tombo
 			});
 
 			// Redirect after save
@@ -18,6 +19,7 @@ angular.module('patrimonios').controller('PatrimoniosController', ['$scope', '$s
 
 				// Clear form fields
 				$scope.name = '';
+                $scope.tombo = '';
 			}, function(errorResponse) {
 				$scope.error = errorResponse.data.message;
 			});
